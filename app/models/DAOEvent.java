@@ -6,30 +6,29 @@ import javax.persistence.Query;
 
 import play.db.jpa.JPA;
 
-public class DAO {
+public class DAOEvent {
 	
-	public void persist(Meta meta){
-		JPA.em().persist(meta);		
+	public void persist(EventHack event){
+		JPA.em().persist(event);		
 	}
 	
 	public void flush(){
 		JPA.em().flush();
 	}
 	
-	public void merge(Meta meta){
-		JPA.em().merge(meta);
+	public void merge(EventHack event){
+		JPA.em().merge(event);
 	}
 	
-	public List<Meta> all() {
-		String hql = "FROM Meta ORDER BY priority";
+	public List<Object> all() {
+		String hql = "FROM EventHack ORDER BY id";
 		Query hqlQuery = JPA.em().createQuery(hql);
 		return hqlQuery.getResultList();
 	}
 	
 	public void update(Long id){
-		Meta metaUp = this.findByEntityId(id);
-		metaUp.setDone();
-		JPA.em().merge(metaUp);		
+		EventHack eventUp = this.findByEntityId(id);
+		JPA.em().merge(eventUp);		
 	}
 	
 	public Query createQuery(String query){
@@ -41,8 +40,8 @@ public class DAO {
 		JPA.em().remove(findByEntityId(id));
 	}
 	
-	public Meta findByEntityId(Long id) {
-		return JPA.em().find(Meta.class, id);
+	public EventHack findByEntityId(Long id) {
+		return JPA.em().find(EventHack.class, id);
 	}
 
 }

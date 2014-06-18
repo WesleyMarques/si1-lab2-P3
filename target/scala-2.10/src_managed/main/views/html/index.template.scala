@@ -31,7 +31,7 @@ Seq[Any](format.raw/*1.19*/("""
 """),_display_(Seq[Any](/*3.2*/main("Welcome to Play")/*3.25*/ {_display_(Seq[Any](format.raw/*3.27*/("""
 <div class="jumbotron">
 	<div class="container">
-		<h1>Metas Pessoais</h1>
+		<h1>Hack</h1>
 	</div>
 </div>
 <div class="continer">
@@ -52,10 +52,10 @@ Seq[Any](format.raw/*1.19*/("""
 }
                 /*
                     -- GENERATED --
-                    DATE: Wed Jun 18 18:48:20 BRT 2014
+                    DATE: Wed Jun 18 19:55:13 BRT 2014
                     SOURCE: C:/Users/Wesley/Dropbox/workspaces/workspaceJEE/si1-lab2-P3/app/views/index.scala.html
-                    HASH: 3644a8986d6bfceec1dbf1f2105d7b4e4ddb794b
-                    MATRIX: 774->1|885->18|922->21|953->44|992->46|1148->171
+                    HASH: 3b2237e346a9128a8c430f723623d8a854010af7
+                    MATRIX: 774->1|885->18|922->21|953->44|992->46|1138->161
                     LINES: 26->1|29->1|31->3|31->3|31->3|42->14
                     -- GENERATED --
                 */

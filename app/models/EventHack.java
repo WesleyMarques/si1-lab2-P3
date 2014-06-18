@@ -1,9 +1,14 @@
 package models;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.SequenceGenerator;
 
 import play.data.validation.Constraints.Required;
@@ -23,6 +28,25 @@ public class EventHack {
 	
 	@Required
 	private String date;
+	
+	// Relação Muitos para Muitos
+	@ManyToMany(cascade = CascadeType.ALL)
+	@JoinTable
+	private List<String> associated;
+
+	/**
+	 * @return the associated
+	 */
+	public List<String> getAssociated() {
+		return associated;
+	}
+
+	/**
+	 * @param associated the associated to set
+	 */
+	public void setAssociated(List<String> associated) {
+		this.associated = associated;
+	}
 
 	/**
 	 * @return the titleHack
