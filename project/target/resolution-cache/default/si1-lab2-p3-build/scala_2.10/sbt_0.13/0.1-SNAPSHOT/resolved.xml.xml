@@ -4,7 +4,7 @@
 		module="si1-lab2-p3-build"
 		revision="0.1-SNAPSHOT"
 		status="integration"
-		publication="20140618173154"
+		publication="20140619092901"
 		e:sbtVersion="0.13" e:scalaVersion="2.10"
 	>
 		<description>

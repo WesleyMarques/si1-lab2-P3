@@ -28,7 +28,7 @@ object index extends BaseScalaTemplate[play.api.templates.HtmlFormat.Appendable,
 
 Seq[Any](format.raw/*1.56*/(""" 
 
-"""),_display_(Seq[Any](/*3.2*/main("Welcome to Play")/*3.25*/ {_display_(Seq[Any](format.raw/*3.27*/("""
+"""),_display_(Seq[Any](/*3.2*/main("Hackfest")/*3.18*/ {_display_(Seq[Any](format.raw/*3.20*/("""
 <div class="jumbotron">
 	<div class="container">
 		<h1>Hack</h1>
@@ -52,10 +52,10 @@ Seq[Any](format.raw/*1.56*/("""
 }
                 /*
                     -- GENERATED --
-                    DATE: Wed Jun 18 20:33:00 BRT 2014
+                    DATE: Thu Jun 19 09:32:25 BRT 2014
                     SOURCE: C:/Users/Wesley/Dropbox/workspaces/workspaceJEE/si1-lab2-P3/app/views/index.scala.html
-                    HASH: 851f9be812a9bd0f4159d4776b17d80c66b668db
-                    MATRIX: 799->1|947->55|985->59|1016->82|1055->84|1201->199
+                    HASH: 3208871fae853af68ef034eec4c85cb3f931cfd6
+                    MATRIX: 799->1|947->55|985->59|1009->75|1048->77|1194->192
                     LINES: 26->1|29->1|31->3|31->3|31->3|42->14
                     -- GENERATED --
                 */

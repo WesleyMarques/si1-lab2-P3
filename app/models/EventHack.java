@@ -1,8 +1,10 @@
 package models;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -13,31 +15,39 @@ import javax.persistence.SequenceGenerator;
 
 import play.data.validation.Constraints.Required;
 
-@Entity
+@Entity(name="EventHack")
 public class EventHack {
 	
 	@Id
-	@SequenceGenerator(name = "META_SEQUENCE", sequenceName = "META_SEQUENCE", allocationSize = 1, initialValue = 0)
+	@SequenceGenerator(name = "EVENTHACK_SEQUENCE", sequenceName = "EVENTHACK_SEQUENCE", allocationSize = 1, initialValue = 0)
 	@GeneratedValue(strategy = GenerationType.TABLE)
 	private long id;
 	
 	@Required
+	@Column(name="titleHack")
 	private String titleHack;
 	
 	@Required
+	@Column(name="description")
 	private String description;
 	
 	@Required
+	@Column(name="date")
 	private String date;
 	
-	// Relação Muitos para Muitos
-	@ManyToMany(cascade = CascadeType.ALL)
-	@JoinTable
+	
+	@JoinTable(name="associated")
 	private List<String> associated;
 	
-	@ManyToMany(cascade = CascadeType.ALL)
-	@JoinTable
-	private List<Long> participantes;
+	
+	@JoinTable(name="participantes")
+	private List<User> participantes;
+	
+	public EventHack() {
+	
+		associated = new ArrayList<String>();
+		participantes = new ArrayList<User>();
+	}
 
 	/**
 	 * @return the associated
@@ -60,18 +70,18 @@ public class EventHack {
 	/**
 	 * @return the participantes
 	 */
-	public List<Long> getParticipantes() {
+	public List<User> getParticipantes() {
 		return participantes;
 	}
 
 	/**
 	 * @param participantes the participantes to set
 	 */
-	public void setParticipantes(List<Long> participantes) {
+	public void setParticipantes(List<User> participantes) {
 		this.participantes = participantes;
 	}
 	
-	public void addParticipantes(Long user){
+	public void addParticipantes(User user){
 		participantes.add(user);
 	}
 
