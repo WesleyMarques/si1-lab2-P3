@@ -1,28 +1,35 @@
 @(hackFest: List[EventHack], metaForm: Form[EventHack])
 
 @main("Hackfest") {
+<meta charset="utf-8">
 <div class="jumbotron">
 	<div class="container">
 		<h1>Hack</h1>
-		<p>Descrição geral</p>
+		<p>DescriÃ§Ã£o geral</p>
 		<button class="btn btn-success">Criar Evento</button>
 	</div>
 </div>
 <div class="container">
 	<div class="row">
+	@if(hackFest.size() == 0){
+	<div class="col-md-12">
+		<div class="alert alert-success">
+		<h2>NÃ£o hÃ¡ nenhum evento registrado</h2>
+		</div>
+	</div>
+	
+	}else{
+	@for(listHack <- hackFest){
 		<div class="col-md-4">
 			<div class="alert alert-info">
-				<h4>Título</h4>
-				<p>n participantes - <b>DD/MM/AAAA</b></p>
+				<h4>@listHack.getTitleHack()</h4>
+				<p>@listHack.getParticipantes().size() participantes - <b>@listHack.getDate()</b></p>
 			</div>
-			<p>conteudo</p>
-			<button class="btn btn-info">Mais informações</button>
+			<p>@listHack.getDescription()</p>
+			<button class="btn btn-info">Mais informaÃ§Ãµes</button>
 			<button class="btn btn-success">Cadastrar-se</button>
 		</div>
-		<div class="col-md-4">teste</div>
-		<div class="col-md-4">teste</div>
-		<div class="col-md-4">test</div>
-
+		}}
 	</div>
 
 </div>

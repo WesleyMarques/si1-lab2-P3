@@ -250,3 +250,128 @@ database [default] connected at jdbc:h2:mem:play
 2014-06-19 14:58:22,507 - [INFO] - from play in play-internal-execution-context-6 
 Application started (Dev)
 
+2014-06-19 15:01:35,389 - [INFO] - from play in play-internal-execution-context-6 
+datasource [jdbc:h2:mem:play] bound to JNDI as DefaultDS
+
+2014-06-19 15:01:35,392 - [INFO] - from play in play-internal-execution-context-6 
+database [default] connected at jdbc:h2:mem:play
+
+2014-06-19 15:01:35,618 - [INFO] - from play in play-internal-execution-context-6 
+Application started (Dev)
+
+2014-06-19 15:02:05,990 - [INFO] - from play in play-internal-execution-context-6 
+datasource [jdbc:h2:mem:play] bound to JNDI as DefaultDS
+
+2014-06-19 15:02:06,034 - [INFO] - from play in play-internal-execution-context-6 
+database [default] connected at jdbc:h2:mem:play
+
+2014-06-19 15:02:06,276 - [INFO] - from play in play-internal-execution-context-6 
+Application started (Dev)
+
+2014-06-19 15:03:56,882 - [INFO] - from play in play-internal-execution-context-6 
+datasource [jdbc:h2:mem:play] bound to JNDI as DefaultDS
+
+2014-06-19 15:03:56,885 - [INFO] - from play in play-internal-execution-context-6 
+database [default] connected at jdbc:h2:mem:play
+
+2014-06-19 15:03:57,077 - [INFO] - from play in play-internal-execution-context-6 
+Application started (Dev)
+
+2014-06-19 15:08:22,167 - [ERROR] - from application in New I/O worker #2 
+
+
+! @6ii8ng6m5 - Internal server error, for (GET) [/hackfest] ->
+
+play.PlayExceptions$TemplateCompilationException: Compilation error[Unmatched bracket]
+	at play.PlaySourceGenerators$$anonfun$3.apply(PlaySourceGenerators.scala:55) ~[na:na]
+	at play.PlaySourceGenerators$$anonfun$3.apply(PlaySourceGenerators.scala:30) ~[na:na]
+	at scala.Function5$$anonfun$tupled$1.apply(Function5.scala:35) ~[scala-library.jar:na]
+	at scala.Function5$$anonfun$tupled$1.apply(Function5.scala:34) ~[scala-library.jar:na]
+	at scala.Function1$$anonfun$compose$1.apply(Function1.scala:47) ~[scala-library.jar:na]
+	at sbt.$tilde$greater$$anonfun$$u2219$1.apply(TypeFunctions.scala:42) ~[na:na]
+	at sbt.std.Transform$$anon$4.work(System.scala:64) ~[na:na]
+	at sbt.Execute$$anonfun$submit$1$$anonfun$apply$1.apply(Execute.scala:237) ~[na:na]
+	at sbt.Execute$$anonfun$submit$1$$anonfun$apply$1.apply(Execute.scala:237) ~[na:na]
+	at sbt.ErrorHandling$.wideConvert(ErrorHandling.scala:18) ~[na:na]
+	at sbt.Execute.work(Execute.scala:244) ~[na:na]
+	at sbt.Execute$$anonfun$submit$1.apply(Execute.scala:237) ~[na:na]
+	at sbt.Execute$$anonfun$submit$1.apply(Execute.scala:237) ~[na:na]
+	at sbt.ConcurrentRestrictions$$anon$4$$anonfun$1.apply(ConcurrentRestrictions.scala:160) ~[na:na]
+	at sbt.CompletionService$$anon$2.call(CompletionService.scala:30) ~[na:na]
+	at java.util.concurrent.FutureTask.run(Unknown Source) ~[na:1.8.0_05]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source) ~[na:1.8.0_05]
+	at java.util.concurrent.FutureTask.run(Unknown Source) ~[na:1.8.0_05]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) [na:1.8.0_05]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) [na:1.8.0_05]
+	at java.lang.Thread.run(Unknown Source) [na:1.8.0_05]
+
+2014-06-19 15:08:43,145 - [INFO] - from play in play-internal-execution-context-6 
+datasource [jdbc:h2:mem:play] bound to JNDI as DefaultDS
+
+2014-06-19 15:08:43,149 - [INFO] - from play in play-internal-execution-context-6 
+database [default] connected at jdbc:h2:mem:play
+
+2014-06-19 15:08:43,477 - [INFO] - from play in play-internal-execution-context-6 
+Application started (Dev)
+
+2014-06-19 15:11:19,598 - [ERROR] - from application in New I/O worker #6 
+
+
+! @6ii8o09ij - Internal server error, for (GET) [/hackfest] ->
+
+play.PlayExceptions$CompilationException: Compilation error[not found: value listHack]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$14$$anonfun$apply$16.apply(PlayReloader.scala:304) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$14$$anonfun$apply$16.apply(PlayReloader.scala:304) ~[na:na]
+	at scala.Option.map(Option.scala:145) ~[scala-library.jar:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$14.apply(PlayReloader.scala:304) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$14.apply(PlayReloader.scala:298) ~[na:na]
+	at scala.Option.map(Option.scala:145) ~[scala-library.jar:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2.apply(PlayReloader.scala:298) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2.apply(PlayReloader.scala:296) ~[na:na]
+	at scala.util.Either$LeftProjection.map(Either.scala:377) ~[scala-library.jar:na]
+	at play.PlayReloader$$anon$1.reload(PlayReloader.scala:296) ~[na:na]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:104) ~[play_2.10.jar:2.2.3]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:102) ~[play_2.10.jar:2.2.3]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) ~[scala-library.jar:na]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask$AdaptedRunnableAction.exec(ForkJoinTask.java:1361) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) ~[scala-library.jar:na]
+
+2014-06-19 15:11:40,348 - [ERROR] - from application in New I/O worker #6 
+
+
+! @6ii8o1eam - Internal server error, for (GET) [/hackfest] ->
+
+play.PlayExceptions$CompilationException: Compilation error[illegal start of simple expression]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$14$$anonfun$apply$16.apply(PlayReloader.scala:304) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$14$$anonfun$apply$16.apply(PlayReloader.scala:304) ~[na:na]
+	at scala.Option.map(Option.scala:145) ~[scala-library.jar:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$14.apply(PlayReloader.scala:304) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$14.apply(PlayReloader.scala:298) ~[na:na]
+	at scala.Option.map(Option.scala:145) ~[scala-library.jar:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2.apply(PlayReloader.scala:298) ~[na:na]
+	at play.PlayReloader$$anon$1$$anonfun$reload$2.apply(PlayReloader.scala:296) ~[na:na]
+	at scala.util.Either$LeftProjection.map(Either.scala:377) ~[scala-library.jar:na]
+	at play.PlayReloader$$anon$1.reload(PlayReloader.scala:296) ~[na:na]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:104) ~[play_2.10.jar:2.2.3]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:102) ~[play_2.10.jar:2.2.3]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) ~[scala-library.jar:na]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask$AdaptedRunnableAction.exec(ForkJoinTask.java:1361) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) ~[scala-library.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) ~[scala-library.jar:na]
+
+2014-06-19 15:12:15,274 - [INFO] - from play in play-internal-execution-context-6 
+datasource [jdbc:h2:mem:play] bound to JNDI as DefaultDS
+
+2014-06-19 15:12:15,277 - [INFO] - from play in play-internal-execution-context-6 
+database [default] connected at jdbc:h2:mem:play
+
+2014-06-19 15:12:15,544 - [INFO] - from play in play-internal-execution-context-6 
+Application started (Dev)
+
