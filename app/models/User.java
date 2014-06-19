@@ -32,6 +32,9 @@ public class User {
 		this.email = email;
 	}
 
+	public User() {
+		// TODO Auto-generated constructor stub
+	}
 	/**
 	 * @return the name
 	 */
