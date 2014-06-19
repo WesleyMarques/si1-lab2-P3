@@ -21,6 +21,7 @@ public class EventHack {
 	@GeneratedValue(strategy = GenerationType.TABLE)
 	private long id;
 	
+	@Required
 	private String titleHack;
 	
 	@Required
@@ -33,6 +34,10 @@ public class EventHack {
 	@ManyToMany(cascade = CascadeType.ALL)
 	@JoinTable
 	private List<String> associated;
+	
+	@ManyToMany(cascade = CascadeType.ALL)
+	@JoinTable
+	private List<Long> participantes;
 
 	/**
 	 * @return the associated
@@ -46,6 +51,28 @@ public class EventHack {
 	 */
 	public void setAssociated(List<String> associated) {
 		this.associated = associated;
+	}
+	
+	public void addAssociated(String valor){
+		associated.add(valor);
+	}
+
+	/**
+	 * @return the participantes
+	 */
+	public List<Long> getParticipantes() {
+		return participantes;
+	}
+
+	/**
+	 * @param participantes the participantes to set
+	 */
+	public void setParticipantes(List<Long> participantes) {
+		this.participantes = participantes;
+	}
+	
+	public void addParticipantes(Long user){
+		participantes.add(user);
 	}
 
 	/**

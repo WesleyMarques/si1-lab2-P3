@@ -20,13 +20,13 @@ import play.api.data.Field
 import play.mvc.Http.Context.Implicit._
 import views.html._
 /**/
-object index extends BaseScalaTemplate[play.api.templates.HtmlFormat.Appendable,Format[play.api.templates.HtmlFormat.Appendable]](play.api.templates.HtmlFormat) with play.api.templates.Template1[String,play.api.templates.HtmlFormat.Appendable] {
+object index extends BaseScalaTemplate[play.api.templates.HtmlFormat.Appendable,Format[play.api.templates.HtmlFormat.Appendable]](play.api.templates.HtmlFormat) with play.api.templates.Template2[List[EventHack],Form[EventHack],play.api.templates.HtmlFormat.Appendable] {
 
     /**/
-    def apply/*1.2*/(message: String):play.api.templates.HtmlFormat.Appendable = {
+    def apply/*1.2*/(hackFest: List[EventHack], metaForm: Form[EventHack]):play.api.templates.HtmlFormat.Appendable = {
         _display_ {
 
-Seq[Any](format.raw/*1.19*/("""
+Seq[Any](format.raw/*1.56*/(""" 
 
 """),_display_(Seq[Any](/*3.2*/main("Welcome to Play")/*3.25*/ {_display_(Seq[Any](format.raw/*3.27*/("""
 <div class="jumbotron">
@@ -43,19 +43,19 @@ Seq[Any](format.raw/*1.19*/("""
 """))}
     }
     
-    def render(message:String): play.api.templates.HtmlFormat.Appendable = apply(message)
+    def render(hackFest:List[EventHack],metaForm:Form[EventHack]): play.api.templates.HtmlFormat.Appendable = apply(hackFest,metaForm)
     
-    def f:((String) => play.api.templates.HtmlFormat.Appendable) = (message) => apply(message)
+    def f:((List[EventHack],Form[EventHack]) => play.api.templates.HtmlFormat.Appendable) = (hackFest,metaForm) => apply(hackFest,metaForm)
     
     def ref: this.type = this
 
 }
                 /*
                     -- GENERATED --
-                    DATE: Wed Jun 18 19:55:13 BRT 2014
+                    DATE: Wed Jun 18 20:33:00 BRT 2014
                     SOURCE: C:/Users/Wesley/Dropbox/workspaces/workspaceJEE/si1-lab2-P3/app/views/index.scala.html
-                    HASH: 3b2237e346a9128a8c430f723623d8a854010af7
-                    MATRIX: 774->1|885->18|922->21|953->44|992->46|1138->161
+                    HASH: 851f9be812a9bd0f4159d4776b17d80c66b668db
+                    MATRIX: 799->1|947->55|985->59|1016->82|1055->84|1201->199
                     LINES: 26->1|29->1|31->3|31->3|31->3|42->14
                     -- GENERATED --
                 */

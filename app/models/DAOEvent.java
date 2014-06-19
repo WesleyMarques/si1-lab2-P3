@@ -1,5 +1,6 @@
 package models;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Query;
@@ -20,7 +21,7 @@ public class DAOEvent {
 		JPA.em().merge(event);
 	}
 	
-	public List<Object> all() {
+	public List<EventHack> all() {
 		String hql = "FROM EventHack ORDER BY id";
 		Query hqlQuery = JPA.em().createQuery(hql);
 		return hqlQuery.getResultList();
