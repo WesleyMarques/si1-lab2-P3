@@ -1,19 +1,33 @@
-2014-06-19 10:40:37,017 - [INFO] - from play in pool-77-thread-3 
+2014-06-19 14:15:38,683 - [INFO] - from play in pool-4-thread-1 
 Listening for HTTP on /0:0:0:0:0:0:0:0:9000
 
-2014-06-19 10:40:41,045 - [INFO] - from play in play-internal-execution-context-1 
+2014-06-19 14:16:32,886 - [INFO] - from play in play-internal-execution-context-1 
 datasource [jdbc:h2:mem:play] bound to JNDI as DefaultDS
 
-2014-06-19 10:40:41,088 - [INFO] - from play in play-internal-execution-context-1 
+2014-06-19 14:16:33,257 - [INFO] - from play in play-internal-execution-context-1 
 database [default] connected at jdbc:h2:mem:play
 
-2014-06-19 10:40:43,056 - [ERROR] - from application in New I/O worker #1 
+2014-06-19 14:16:45,693 - [ERROR] - from application in New I/O worker #1 
 
 
-! @6ii7ecf3k - Internal server error, for (GET) [/hackfest] ->
+! @6ii8gm2ge - Internal server error, for (GET) [/] ->
 
-play.api.UnexpectedException: Unexpected exception[PersistenceException: [PersistenceUnit: h2PersistenceUnit] Unable to build EntityManagerFactory]
-	at play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1$$anonfun$1.apply(ApplicationProvider.scala:148) ~[play_2.10.jar:2.2.3]
+play.api.db.evolutions.InvalidDatabaseRevision: Database 'default' needs evolution![An SQL script need to be run on your database.]
+	at play.api.db.evolutions.EvolutionsPlugin$$anonfun$onStart$1$$anonfun$apply$1.apply$mcV$sp(Evolutions.scala:486) ~[play-jdbc_2.10.jar:2.2.3]
+	at play.api.db.evolutions.EvolutionsPlugin.withLock(Evolutions.scala:507) ~[play-jdbc_2.10.jar:2.2.3]
+	at play.api.db.evolutions.EvolutionsPlugin$$anonfun$onStart$1.apply(Evolutions.scala:461) ~[play-jdbc_2.10.jar:2.2.3]
+	at play.api.db.evolutions.EvolutionsPlugin$$anonfun$onStart$1.apply(Evolutions.scala:459) ~[play-jdbc_2.10.jar:2.2.3]
+	at scala.collection.immutable.List.foreach(List.scala:318) ~[scala-library.jar:na]
+	at play.api.db.evolutions.EvolutionsPlugin.onStart(Evolutions.scala:459) ~[play-jdbc_2.10.jar:2.2.3]
+	at play.api.Play$$anonfun$start$1$$anonfun$apply$mcV$sp$1.apply(Play.scala:88) ~[play_2.10.jar:2.2.3]
+	at play.api.Play$$anonfun$start$1$$anonfun$apply$mcV$sp$1.apply(Play.scala:88) ~[play_2.10.jar:2.2.3]
+	at scala.collection.immutable.List.foreach(List.scala:318) ~[scala-library.jar:na]
+	at play.api.Play$$anonfun$start$1.apply$mcV$sp(Play.scala:88) ~[play_2.10.jar:2.2.3]
+	at play.api.Play$$anonfun$start$1.apply(Play.scala:88) ~[play_2.10.jar:2.2.3]
+	at play.api.Play$$anonfun$start$1.apply(Play.scala:88) ~[play_2.10.jar:2.2.3]
+	at play.utils.Threads$.withContextClassLoader(Threads.scala:18) ~[play_2.10.jar:2.2.3]
+	at play.api.Play$.start(Play.scala:87) ~[play_2.10.jar:2.2.3]
+	at play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1$$anonfun$1.apply(ApplicationProvider.scala:139) ~[play_2.10.jar:2.2.3]
 	at play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1$$anonfun$1.apply(ApplicationProvider.scala:112) ~[play_2.10.jar:2.2.3]
 	at scala.Option.map(Option.scala:145) ~[scala-library.jar:na]
 	at play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1.apply(ApplicationProvider.scala:112) ~[play_2.10.jar:2.2.3]
@@ -28,308 +42,211 @@ play.api.UnexpectedException: Unexpected exception[PersistenceException: [Persis
 	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) ~[scala-library.jar:na]
 	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) ~[scala-library.jar:na]
 	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) ~[scala-library.jar:na]
-Caused by: javax.persistence.PersistenceException: [PersistenceUnit: h2PersistenceUnit] Unable to build EntityManagerFactory
-	at org.hibernate.ejb.Ejb3Configuration.buildEntityManagerFactory(Ejb3Configuration.java:924) ~[hibernate-entitymanager-4.2.3.Final.jar:4.2.3.Final]
-	at org.hibernate.ejb.Ejb3Configuration.buildEntityManagerFactory(Ejb3Configuration.java:899) ~[hibernate-entitymanager-4.2.3.Final.jar:4.2.3.Final]
-	at org.hibernate.ejb.HibernatePersistence.createEntityManagerFactory(HibernatePersistence.java:59) ~[hibernate-entitymanager-4.2.3.Final.jar:4.2.3.Final]
-	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:63) ~[hibernate-jpa-2.0-api.jar:1.0.1.Final]
-	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:47) ~[hibernate-jpa-2.0-api.jar:1.0.1.Final]
-	at play.db.jpa.JPAPlugin.onStart(JPAPlugin.java:35) ~[play-java-jpa_2.10.jar:2.2.3]
-	at play.api.Play$$anonfun$start$1$$anonfun$apply$mcV$sp$1.apply(Play.scala:88) ~[play_2.10.jar:2.2.3]
-	at play.api.Play$$anonfun$start$1$$anonfun$apply$mcV$sp$1.apply(Play.scala:88) ~[play_2.10.jar:2.2.3]
-	at scala.collection.immutable.List.foreach(List.scala:318) ~[scala-library.jar:na]
-	at play.api.Play$$anonfun$start$1.apply$mcV$sp(Play.scala:88) ~[play_2.10.jar:2.2.3]
-	at play.api.Play$$anonfun$start$1.apply(Play.scala:88) ~[play_2.10.jar:2.2.3]
-	at play.api.Play$$anonfun$start$1.apply(Play.scala:88) ~[play_2.10.jar:2.2.3]
-	at play.utils.Threads$.withContextClassLoader(Threads.scala:18) ~[play_2.10.jar:2.2.3]
-	at play.api.Play$.start(Play.scala:87) ~[play_2.10.jar:2.2.3]
-	at play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1$$anonfun$1.apply(ApplicationProvider.scala:139) ~[play_2.10.jar:2.2.3]
-	... 14 common frames omitted
-Caused by: org.hibernate.AnnotationException: Associations marked as mappedBy must not define database mappings like @JoinTable or @JoinColumn: models.EventHack.participantes
-	at org.hibernate.cfg.annotations.CollectionBinder.bind(CollectionBinder.java:526) ~[hibernate-core-4.2.3.Final.jar:4.2.3.Final]
-	at org.hibernate.cfg.AnnotationBinder.processElementAnnotations(AnnotationBinder.java:1956) ~[hibernate-core-4.2.3.Final.jar:4.2.3.Final]
-	at org.hibernate.cfg.AnnotationBinder.processIdPropertiesIfNotAlready(AnnotationBinder.java:767) ~[hibernate-core-4.2.3.Final.jar:4.2.3.Final]
-	at org.hibernate.cfg.AnnotationBinder.bindClass(AnnotationBinder.java:686) ~[hibernate-core-4.2.3.Final.jar:4.2.3.Final]
-	at org.hibernate.cfg.Configuration$MetadataSourceQueue.processAnnotatedClassesQueue(Configuration.java:3512) ~[hibernate-core-4.2.3.Final.jar:4.2.3.Final]
-	at org.hibernate.cfg.Configuration$MetadataSourceQueue.processMetadata(Configuration.java:3466) ~[hibernate-core-4.2.3.Final.jar:4.2.3.Final]
-	at org.hibernate.cfg.Configuration.secondPassCompile(Configuration.java:1355) ~[hibernate-core-4.2.3.Final.jar:4.2.3.Final]
-	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1756) ~[hibernate-core-4.2.3.Final.jar:4.2.3.Final]
-	at org.hibernate.ejb.EntityManagerFactoryImpl.<init>(EntityManagerFactoryImpl.java:96) ~[hibernate-entitymanager-4.2.3.Final.jar:4.2.3.Final]
-	at org.hibernate.ejb.Ejb3Configuration.buildEntityManagerFactory(Ejb3Configuration.java:914) ~[hibernate-entitymanager-4.2.3.Final.jar:4.2.3.Final]
-	... 28 common frames omitted
 
-2014-06-19 10:53:44,443 - [INFO] - from play in play-internal-execution-context-1 
+2014-06-19 14:16:58,409 - [INFO] - from play in play-internal-execution-context-1 
 datasource [jdbc:h2:mem:play] bound to JNDI as DefaultDS
 
-2014-06-19 10:53:44,447 - [INFO] - from play in play-internal-execution-context-1 
+2014-06-19 14:16:58,413 - [INFO] - from play in play-internal-execution-context-1 
 database [default] connected at jdbc:h2:mem:play
 
-2014-06-19 10:53:44,651 - [ERROR] - from application in New I/O worker #2 
+2014-06-19 14:16:59,166 - [INFO] - from play in play-internal-execution-context-1 
+Application started (Dev)
 
-
-! @6ii7g519j - Internal server error, for (GET) [/hackfest] ->
-
-play.api.UnexpectedException: Unexpected exception[PersistenceException: [PersistenceUnit: h2PersistenceUnit] Unable to build EntityManagerFactory]
-	at play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1$$anonfun$1.apply(ApplicationProvider.scala:148) ~[play_2.10.jar:2.2.3]
-	at play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1$$anonfun$1.apply(ApplicationProvider.scala:112) ~[play_2.10.jar:2.2.3]
-	at scala.Option.map(Option.scala:145) ~[scala-library.jar:na]
-	at play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1.apply(ApplicationProvider.scala:112) ~[play_2.10.jar:2.2.3]
-	at play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1.apply(ApplicationProvider.scala:110) ~[play_2.10.jar:2.2.3]
-	at scala.util.Success.flatMap(Try.scala:200) ~[scala-library.jar:na]
-	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:110) ~[play_2.10.jar:2.2.3]
-	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:102) ~[play_2.10.jar:2.2.3]
-	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) ~[scala-library.jar:na]
-	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) ~[scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinTask$AdaptedRunnableAction.exec(ForkJoinTask.java:1361) ~[scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) ~[scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) ~[scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) ~[scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) ~[scala-library.jar:na]
-Caused by: javax.persistence.PersistenceException: [PersistenceUnit: h2PersistenceUnit] Unable to build EntityManagerFactory
-	at org.hibernate.ejb.Ejb3Configuration.buildEntityManagerFactory(Ejb3Configuration.java:924) ~[hibernate-entitymanager-4.2.3.Final.jar:4.2.3.Final]
-	at org.hibernate.ejb.Ejb3Configuration.buildEntityManagerFactory(Ejb3Configuration.java:899) ~[hibernate-entitymanager-4.2.3.Final.jar:4.2.3.Final]
-	at org.hibernate.ejb.HibernatePersistence.createEntityManagerFactory(HibernatePersistence.java:59) ~[hibernate-entitymanager-4.2.3.Final.jar:4.2.3.Final]
-	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:63) ~[hibernate-jpa-2.0-api.jar:1.0.1.Final]
-	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:47) ~[hibernate-jpa-2.0-api.jar:1.0.1.Final]
-	at play.db.jpa.JPAPlugin.onStart(JPAPlugin.java:35) ~[play-java-jpa_2.10.jar:2.2.3]
-	at play.api.Play$$anonfun$start$1$$anonfun$apply$mcV$sp$1.apply(Play.scala:88) ~[play_2.10.jar:2.2.3]
-	at play.api.Play$$anonfun$start$1$$anonfun$apply$mcV$sp$1.apply(Play.scala:88) ~[play_2.10.jar:2.2.3]
-	at scala.collection.immutable.List.foreach(List.scala:318) ~[scala-library.jar:na]
-	at play.api.Play$$anonfun$start$1.apply$mcV$sp(Play.scala:88) ~[play_2.10.jar:2.2.3]
-	at play.api.Play$$anonfun$start$1.apply(Play.scala:88) ~[play_2.10.jar:2.2.3]
-	at play.api.Play$$anonfun$start$1.apply(Play.scala:88) ~[play_2.10.jar:2.2.3]
-	at play.utils.Threads$.withContextClassLoader(Threads.scala:18) ~[play_2.10.jar:2.2.3]
-	at play.api.Play$.start(Play.scala:87) ~[play_2.10.jar:2.2.3]
-	at play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1$$anonfun$1.apply(ApplicationProvider.scala:139) ~[play_2.10.jar:2.2.3]
-	... 14 common frames omitted
-Caused by: org.hibernate.AnnotationException: Associations marked as mappedBy must not define database mappings like @JoinTable or @JoinColumn: models.EventHack.participantes
-	at org.hibernate.cfg.annotations.CollectionBinder.bind(CollectionBinder.java:526) ~[hibernate-core-4.2.3.Final.jar:4.2.3.Final]
-	at org.hibernate.cfg.AnnotationBinder.processElementAnnotations(AnnotationBinder.java:1956) ~[hibernate-core-4.2.3.Final.jar:4.2.3.Final]
-	at org.hibernate.cfg.AnnotationBinder.processIdPropertiesIfNotAlready(AnnotationBinder.java:767) ~[hibernate-core-4.2.3.Final.jar:4.2.3.Final]
-	at org.hibernate.cfg.AnnotationBinder.bindClass(AnnotationBinder.java:686) ~[hibernate-core-4.2.3.Final.jar:4.2.3.Final]
-	at org.hibernate.cfg.Configuration$MetadataSourceQueue.processAnnotatedClassesQueue(Configuration.java:3512) ~[hibernate-core-4.2.3.Final.jar:4.2.3.Final]
-	at org.hibernate.cfg.Configuration$MetadataSourceQueue.processMetadata(Configuration.java:3466) ~[hibernate-core-4.2.3.Final.jar:4.2.3.Final]
-	at org.hibernate.cfg.Configuration.secondPassCompile(Configuration.java:1355) ~[hibernate-core-4.2.3.Final.jar:4.2.3.Final]
-	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1756) ~[hibernate-core-4.2.3.Final.jar:4.2.3.Final]
-	at org.hibernate.ejb.EntityManagerFactoryImpl.<init>(EntityManagerFactoryImpl.java:96) ~[hibernate-entitymanager-4.2.3.Final.jar:4.2.3.Final]
-	at org.hibernate.ejb.Ejb3Configuration.buildEntityManagerFactory(Ejb3Configuration.java:914) ~[hibernate-entitymanager-4.2.3.Final.jar:4.2.3.Final]
-	... 28 common frames omitted
-
-2014-06-19 11:02:22,593 - [INFO] - from play in play-internal-execution-context-1 
+2014-06-19 14:21:18,070 - [INFO] - from play in play-internal-execution-context-2 
 datasource [jdbc:h2:mem:play] bound to JNDI as DefaultDS
 
-2014-06-19 11:02:22,605 - [INFO] - from play in play-internal-execution-context-1 
+2014-06-19 14:21:18,078 - [INFO] - from play in play-internal-execution-context-2 
 database [default] connected at jdbc:h2:mem:play
 
-2014-06-19 11:02:23,116 - [ERROR] - from application in New I/O worker #4 
+2014-06-19 14:21:18,504 - [INFO] - from play in play-internal-execution-context-2 
+Application started (Dev)
 
-
-! @6ii7h8e8i - Internal server error, for (GET) [/hackfest] ->
-
-play.api.UnexpectedException: Unexpected exception[PersistenceException: [PersistenceUnit: h2PersistenceUnit] Unable to build EntityManagerFactory]
-	at play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1$$anonfun$1.apply(ApplicationProvider.scala:148) ~[play_2.10.jar:2.2.3]
-	at play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1$$anonfun$1.apply(ApplicationProvider.scala:112) ~[play_2.10.jar:2.2.3]
-	at scala.Option.map(Option.scala:145) ~[scala-library.jar:na]
-	at play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1.apply(ApplicationProvider.scala:112) ~[play_2.10.jar:2.2.3]
-	at play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1.apply(ApplicationProvider.scala:110) ~[play_2.10.jar:2.2.3]
-	at scala.util.Success.flatMap(Try.scala:200) ~[scala-library.jar:na]
-	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:110) ~[play_2.10.jar:2.2.3]
-	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:102) ~[play_2.10.jar:2.2.3]
-	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) ~[scala-library.jar:na]
-	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) ~[scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinTask$AdaptedRunnableAction.exec(ForkJoinTask.java:1361) ~[scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) ~[scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) ~[scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) ~[scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) ~[scala-library.jar:na]
-Caused by: javax.persistence.PersistenceException: [PersistenceUnit: h2PersistenceUnit] Unable to build EntityManagerFactory
-	at org.hibernate.ejb.Ejb3Configuration.buildEntityManagerFactory(Ejb3Configuration.java:924) ~[hibernate-entitymanager-4.2.3.Final.jar:4.2.3.Final]
-	at org.hibernate.ejb.Ejb3Configuration.buildEntityManagerFactory(Ejb3Configuration.java:899) ~[hibernate-entitymanager-4.2.3.Final.jar:4.2.3.Final]
-	at org.hibernate.ejb.HibernatePersistence.createEntityManagerFactory(HibernatePersistence.java:59) ~[hibernate-entitymanager-4.2.3.Final.jar:4.2.3.Final]
-	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:63) ~[hibernate-jpa-2.0-api.jar:1.0.1.Final]
-	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:47) ~[hibernate-jpa-2.0-api.jar:1.0.1.Final]
-	at play.db.jpa.JPAPlugin.onStart(JPAPlugin.java:35) ~[play-java-jpa_2.10.jar:2.2.3]
-	at play.api.Play$$anonfun$start$1$$anonfun$apply$mcV$sp$1.apply(Play.scala:88) ~[play_2.10.jar:2.2.3]
-	at play.api.Play$$anonfun$start$1$$anonfun$apply$mcV$sp$1.apply(Play.scala:88) ~[play_2.10.jar:2.2.3]
-	at scala.collection.immutable.List.foreach(List.scala:318) ~[scala-library.jar:na]
-	at play.api.Play$$anonfun$start$1.apply$mcV$sp(Play.scala:88) ~[play_2.10.jar:2.2.3]
-	at play.api.Play$$anonfun$start$1.apply(Play.scala:88) ~[play_2.10.jar:2.2.3]
-	at play.api.Play$$anonfun$start$1.apply(Play.scala:88) ~[play_2.10.jar:2.2.3]
-	at play.utils.Threads$.withContextClassLoader(Threads.scala:18) ~[play_2.10.jar:2.2.3]
-	at play.api.Play$.start(Play.scala:87) ~[play_2.10.jar:2.2.3]
-	at play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1$$anonfun$1.apply(ApplicationProvider.scala:139) ~[play_2.10.jar:2.2.3]
-	... 14 common frames omitted
-Caused by: org.hibernate.MappingException: Could not determine type for: java.util.List, at table: EventHack, for columns: [org.hibernate.mapping.Column(associated)]
-	at org.hibernate.mapping.SimpleValue.getType(SimpleValue.java:314) ~[hibernate-core-4.2.3.Final.jar:4.2.3.Final]
-	at org.hibernate.mapping.SimpleValue.isValid(SimpleValue.java:292) ~[hibernate-core-4.2.3.Final.jar:4.2.3.Final]
-	at org.hibernate.mapping.Property.isValid(Property.java:239) ~[hibernate-core-4.2.3.Final.jar:4.2.3.Final]
-	at org.hibernate.mapping.PersistentClass.validate(PersistentClass.java:469) ~[hibernate-core-4.2.3.Final.jar:4.2.3.Final]
-	at org.hibernate.mapping.RootClass.validate(RootClass.java:270) ~[hibernate-core-4.2.3.Final.jar:4.2.3.Final]
-	at org.hibernate.cfg.Configuration.validate(Configuration.java:1303) ~[hibernate-core-4.2.3.Final.jar:4.2.3.Final]
-	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1761) ~[hibernate-core-4.2.3.Final.jar:4.2.3.Final]
-	at org.hibernate.ejb.EntityManagerFactoryImpl.<init>(EntityManagerFactoryImpl.java:96) ~[hibernate-entitymanager-4.2.3.Final.jar:4.2.3.Final]
-	at org.hibernate.ejb.Ejb3Configuration.buildEntityManagerFactory(Ejb3Configuration.java:914) ~[hibernate-entitymanager-4.2.3.Final.jar:4.2.3.Final]
-	... 28 common frames omitted
-
-2014-06-19 11:06:13,590 - [INFO] - from play in play-internal-execution-context-1 
+2014-06-19 14:21:26,260 - [INFO] - from play in play-internal-execution-context-2 
 datasource [jdbc:h2:mem:play] bound to JNDI as DefaultDS
 
-2014-06-19 11:06:13,594 - [INFO] - from play in play-internal-execution-context-1 
+2014-06-19 14:21:26,265 - [INFO] - from play in play-internal-execution-context-2 
 database [default] connected at jdbc:h2:mem:play
 
-2014-06-19 11:06:13,974 - [ERROR] - from application in New I/O worker #4 
+2014-06-19 14:21:26,605 - [INFO] - from play in play-internal-execution-context-2 
+Application started (Dev)
 
-
-! @6ii7hlhic - Internal server error, for (GET) [/hackfest] ->
-
-play.api.UnexpectedException: Unexpected exception[PersistenceException: [PersistenceUnit: h2PersistenceUnit] Unable to build EntityManagerFactory]
-	at play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1$$anonfun$1.apply(ApplicationProvider.scala:148) ~[play_2.10.jar:2.2.3]
-	at play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1$$anonfun$1.apply(ApplicationProvider.scala:112) ~[play_2.10.jar:2.2.3]
-	at scala.Option.map(Option.scala:145) ~[scala-library.jar:na]
-	at play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1.apply(ApplicationProvider.scala:112) ~[play_2.10.jar:2.2.3]
-	at play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1.apply(ApplicationProvider.scala:110) ~[play_2.10.jar:2.2.3]
-	at scala.util.Success.flatMap(Try.scala:200) ~[scala-library.jar:na]
-	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:110) ~[play_2.10.jar:2.2.3]
-	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:102) ~[play_2.10.jar:2.2.3]
-	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) ~[scala-library.jar:na]
-	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) ~[scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinTask$AdaptedRunnableAction.exec(ForkJoinTask.java:1361) ~[scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) ~[scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) ~[scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) ~[scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) ~[scala-library.jar:na]
-Caused by: javax.persistence.PersistenceException: [PersistenceUnit: h2PersistenceUnit] Unable to build EntityManagerFactory
-	at org.hibernate.ejb.Ejb3Configuration.buildEntityManagerFactory(Ejb3Configuration.java:924) ~[hibernate-entitymanager-4.2.3.Final.jar:4.2.3.Final]
-	at org.hibernate.ejb.Ejb3Configuration.buildEntityManagerFactory(Ejb3Configuration.java:899) ~[hibernate-entitymanager-4.2.3.Final.jar:4.2.3.Final]
-	at org.hibernate.ejb.HibernatePersistence.createEntityManagerFactory(HibernatePersistence.java:59) ~[hibernate-entitymanager-4.2.3.Final.jar:4.2.3.Final]
-	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:63) ~[hibernate-jpa-2.0-api.jar:1.0.1.Final]
-	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:47) ~[hibernate-jpa-2.0-api.jar:1.0.1.Final]
-	at play.db.jpa.JPAPlugin.onStart(JPAPlugin.java:35) ~[play-java-jpa_2.10.jar:2.2.3]
-	at play.api.Play$$anonfun$start$1$$anonfun$apply$mcV$sp$1.apply(Play.scala:88) ~[play_2.10.jar:2.2.3]
-	at play.api.Play$$anonfun$start$1$$anonfun$apply$mcV$sp$1.apply(Play.scala:88) ~[play_2.10.jar:2.2.3]
-	at scala.collection.immutable.List.foreach(List.scala:318) ~[scala-library.jar:na]
-	at play.api.Play$$anonfun$start$1.apply$mcV$sp(Play.scala:88) ~[play_2.10.jar:2.2.3]
-	at play.api.Play$$anonfun$start$1.apply(Play.scala:88) ~[play_2.10.jar:2.2.3]
-	at play.api.Play$$anonfun$start$1.apply(Play.scala:88) ~[play_2.10.jar:2.2.3]
-	at play.utils.Threads$.withContextClassLoader(Threads.scala:18) ~[play_2.10.jar:2.2.3]
-	at play.api.Play$.start(Play.scala:87) ~[play_2.10.jar:2.2.3]
-	at play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1$$anonfun$1.apply(ApplicationProvider.scala:139) ~[play_2.10.jar:2.2.3]
-	... 14 common frames omitted
-Caused by: org.hibernate.MappingException: Could not determine type for: java.util.List, at table: EventHack, for columns: [org.hibernate.mapping.Column(associated)]
-	at org.hibernate.mapping.SimpleValue.getType(SimpleValue.java:314) ~[hibernate-core-4.2.3.Final.jar:4.2.3.Final]
-	at org.hibernate.mapping.SimpleValue.isValid(SimpleValue.java:292) ~[hibernate-core-4.2.3.Final.jar:4.2.3.Final]
-	at org.hibernate.mapping.Property.isValid(Property.java:239) ~[hibernate-core-4.2.3.Final.jar:4.2.3.Final]
-	at org.hibernate.mapping.PersistentClass.validate(PersistentClass.java:469) ~[hibernate-core-4.2.3.Final.jar:4.2.3.Final]
-	at org.hibernate.mapping.RootClass.validate(RootClass.java:270) ~[hibernate-core-4.2.3.Final.jar:4.2.3.Final]
-	at org.hibernate.cfg.Configuration.validate(Configuration.java:1303) ~[hibernate-core-4.2.3.Final.jar:4.2.3.Final]
-	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1761) ~[hibernate-core-4.2.3.Final.jar:4.2.3.Final]
-	at org.hibernate.ejb.EntityManagerFactoryImpl.<init>(EntityManagerFactoryImpl.java:96) ~[hibernate-entitymanager-4.2.3.Final.jar:4.2.3.Final]
-	at org.hibernate.ejb.Ejb3Configuration.buildEntityManagerFactory(Ejb3Configuration.java:914) ~[hibernate-entitymanager-4.2.3.Final.jar:4.2.3.Final]
-	... 28 common frames omitted
-
-2014-06-19 11:06:37,862 - [ERROR] - from application in New I/O worker #4 
-
-
-! @6ii7hlhic - Internal server error, for (GET) [/hackfest] ->
-
-play.api.UnexpectedException: Unexpected exception[PersistenceException: [PersistenceUnit: h2PersistenceUnit] Unable to build EntityManagerFactory]
-	at play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1$$anonfun$1.apply(ApplicationProvider.scala:148) ~[play_2.10.jar:2.2.3]
-	at play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1$$anonfun$1.apply(ApplicationProvider.scala:112) ~[play_2.10.jar:2.2.3]
-	at scala.Option.map(Option.scala:145) ~[scala-library.jar:na]
-	at play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1.apply(ApplicationProvider.scala:112) ~[play_2.10.jar:2.2.3]
-	at play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1.apply(ApplicationProvider.scala:110) ~[play_2.10.jar:2.2.3]
-	at scala.util.Success.flatMap(Try.scala:200) ~[scala-library.jar:na]
-	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:110) ~[play_2.10.jar:2.2.3]
-	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:102) ~[play_2.10.jar:2.2.3]
-	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) ~[scala-library.jar:na]
-	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) ~[scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinTask$AdaptedRunnableAction.exec(ForkJoinTask.java:1361) ~[scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) ~[scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) ~[scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) ~[scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) ~[scala-library.jar:na]
-Caused by: javax.persistence.PersistenceException: [PersistenceUnit: h2PersistenceUnit] Unable to build EntityManagerFactory
-	at org.hibernate.ejb.Ejb3Configuration.buildEntityManagerFactory(Ejb3Configuration.java:924) ~[hibernate-entitymanager-4.2.3.Final.jar:4.2.3.Final]
-	at org.hibernate.ejb.Ejb3Configuration.buildEntityManagerFactory(Ejb3Configuration.java:899) ~[hibernate-entitymanager-4.2.3.Final.jar:4.2.3.Final]
-	at org.hibernate.ejb.HibernatePersistence.createEntityManagerFactory(HibernatePersistence.java:59) ~[hibernate-entitymanager-4.2.3.Final.jar:4.2.3.Final]
-	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:63) ~[hibernate-jpa-2.0-api.jar:1.0.1.Final]
-	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:47) ~[hibernate-jpa-2.0-api.jar:1.0.1.Final]
-	at play.db.jpa.JPAPlugin.onStart(JPAPlugin.java:35) ~[play-java-jpa_2.10.jar:2.2.3]
-	at play.api.Play$$anonfun$start$1$$anonfun$apply$mcV$sp$1.apply(Play.scala:88) ~[play_2.10.jar:2.2.3]
-	at play.api.Play$$anonfun$start$1$$anonfun$apply$mcV$sp$1.apply(Play.scala:88) ~[play_2.10.jar:2.2.3]
-	at scala.collection.immutable.List.foreach(List.scala:318) ~[scala-library.jar:na]
-	at play.api.Play$$anonfun$start$1.apply$mcV$sp(Play.scala:88) ~[play_2.10.jar:2.2.3]
-	at play.api.Play$$anonfun$start$1.apply(Play.scala:88) ~[play_2.10.jar:2.2.3]
-	at play.api.Play$$anonfun$start$1.apply(Play.scala:88) ~[play_2.10.jar:2.2.3]
-	at play.utils.Threads$.withContextClassLoader(Threads.scala:18) ~[play_2.10.jar:2.2.3]
-	at play.api.Play$.start(Play.scala:87) ~[play_2.10.jar:2.2.3]
-	at play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1$$anonfun$1.apply(ApplicationProvider.scala:139) ~[play_2.10.jar:2.2.3]
-	... 14 common frames omitted
-Caused by: org.hibernate.MappingException: Could not determine type for: java.util.List, at table: EventHack, for columns: [org.hibernate.mapping.Column(associated)]
-	at org.hibernate.mapping.SimpleValue.getType(SimpleValue.java:314) ~[hibernate-core-4.2.3.Final.jar:4.2.3.Final]
-	at org.hibernate.mapping.SimpleValue.isValid(SimpleValue.java:292) ~[hibernate-core-4.2.3.Final.jar:4.2.3.Final]
-	at org.hibernate.mapping.Property.isValid(Property.java:239) ~[hibernate-core-4.2.3.Final.jar:4.2.3.Final]
-	at org.hibernate.mapping.PersistentClass.validate(PersistentClass.java:469) ~[hibernate-core-4.2.3.Final.jar:4.2.3.Final]
-	at org.hibernate.mapping.RootClass.validate(RootClass.java:270) ~[hibernate-core-4.2.3.Final.jar:4.2.3.Final]
-	at org.hibernate.cfg.Configuration.validate(Configuration.java:1303) ~[hibernate-core-4.2.3.Final.jar:4.2.3.Final]
-	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1761) ~[hibernate-core-4.2.3.Final.jar:4.2.3.Final]
-	at org.hibernate.ejb.EntityManagerFactoryImpl.<init>(EntityManagerFactoryImpl.java:96) ~[hibernate-entitymanager-4.2.3.Final.jar:4.2.3.Final]
-	at org.hibernate.ejb.Ejb3Configuration.buildEntityManagerFactory(Ejb3Configuration.java:914) ~[hibernate-entitymanager-4.2.3.Final.jar:4.2.3.Final]
-	... 28 common frames omitted
-
-2014-06-19 11:09:49,831 - [INFO] - from play in play-internal-execution-context-1 
+2014-06-19 14:22:01,489 - [INFO] - from play in play-internal-execution-context-3 
 datasource [jdbc:h2:mem:play] bound to JNDI as DefaultDS
 
-2014-06-19 11:09:49,835 - [INFO] - from play in play-internal-execution-context-1 
+2014-06-19 14:22:01,493 - [INFO] - from play in play-internal-execution-context-3 
 database [default] connected at jdbc:h2:mem:play
 
-2014-06-19 11:09:50,095 - [ERROR] - from application in New I/O worker #4 
+2014-06-19 14:22:01,828 - [INFO] - from play in play-internal-execution-context-3 
+Application started (Dev)
 
+2014-06-19 14:25:40,232 - [INFO] - from play in play-internal-execution-context-3 
+datasource [jdbc:h2:mem:play] bound to JNDI as DefaultDS
 
-! @6ii7i7pe5 - Internal server error, for (GET) [/hackfest] ->
+2014-06-19 14:25:40,237 - [INFO] - from play in play-internal-execution-context-3 
+database [default] connected at jdbc:h2:mem:play
 
-play.api.UnexpectedException: Unexpected exception[PersistenceException: [PersistenceUnit: h2PersistenceUnit] Unable to build EntityManagerFactory]
-	at play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1$$anonfun$1.apply(ApplicationProvider.scala:148) ~[play_2.10.jar:2.2.3]
-	at play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1$$anonfun$1.apply(ApplicationProvider.scala:112) ~[play_2.10.jar:2.2.3]
-	at scala.Option.map(Option.scala:145) ~[scala-library.jar:na]
-	at play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1.apply(ApplicationProvider.scala:112) ~[play_2.10.jar:2.2.3]
-	at play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1.apply(ApplicationProvider.scala:110) ~[play_2.10.jar:2.2.3]
-	at scala.util.Success.flatMap(Try.scala:200) ~[scala-library.jar:na]
-	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:110) ~[play_2.10.jar:2.2.3]
-	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:102) ~[play_2.10.jar:2.2.3]
-	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) ~[scala-library.jar:na]
-	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) ~[scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinTask$AdaptedRunnableAction.exec(ForkJoinTask.java:1361) ~[scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) ~[scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) ~[scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) ~[scala-library.jar:na]
-	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) ~[scala-library.jar:na]
-Caused by: javax.persistence.PersistenceException: [PersistenceUnit: h2PersistenceUnit] Unable to build EntityManagerFactory
-	at org.hibernate.ejb.Ejb3Configuration.buildEntityManagerFactory(Ejb3Configuration.java:924) ~[hibernate-entitymanager-4.2.3.Final.jar:4.2.3.Final]
-	at org.hibernate.ejb.Ejb3Configuration.buildEntityManagerFactory(Ejb3Configuration.java:899) ~[hibernate-entitymanager-4.2.3.Final.jar:4.2.3.Final]
-	at org.hibernate.ejb.HibernatePersistence.createEntityManagerFactory(HibernatePersistence.java:59) ~[hibernate-entitymanager-4.2.3.Final.jar:4.2.3.Final]
-	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:63) ~[hibernate-jpa-2.0-api.jar:1.0.1.Final]
-	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:47) ~[hibernate-jpa-2.0-api.jar:1.0.1.Final]
-	at play.db.jpa.JPAPlugin.onStart(JPAPlugin.java:35) ~[play-java-jpa_2.10.jar:2.2.3]
-	at play.api.Play$$anonfun$start$1$$anonfun$apply$mcV$sp$1.apply(Play.scala:88) ~[play_2.10.jar:2.2.3]
-	at play.api.Play$$anonfun$start$1$$anonfun$apply$mcV$sp$1.apply(Play.scala:88) ~[play_2.10.jar:2.2.3]
-	at scala.collection.immutable.List.foreach(List.scala:318) ~[scala-library.jar:na]
-	at play.api.Play$$anonfun$start$1.apply$mcV$sp(Play.scala:88) ~[play_2.10.jar:2.2.3]
-	at play.api.Play$$anonfun$start$1.apply(Play.scala:88) ~[play_2.10.jar:2.2.3]
-	at play.api.Play$$anonfun$start$1.apply(Play.scala:88) ~[play_2.10.jar:2.2.3]
-	at play.utils.Threads$.withContextClassLoader(Threads.scala:18) ~[play_2.10.jar:2.2.3]
-	at play.api.Play$.start(Play.scala:87) ~[play_2.10.jar:2.2.3]
-	at play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1$$anonfun$1.apply(ApplicationProvider.scala:139) ~[play_2.10.jar:2.2.3]
-	... 14 common frames omitted
-Caused by: org.hibernate.MappingException: Could not determine type for: java.util.List, at table: EventHack, for columns: [org.hibernate.mapping.Column(associated)]
-	at org.hibernate.mapping.SimpleValue.getType(SimpleValue.java:314) ~[hibernate-core-4.2.3.Final.jar:4.2.3.Final]
-	at org.hibernate.mapping.SimpleValue.isValid(SimpleValue.java:292) ~[hibernate-core-4.2.3.Final.jar:4.2.3.Final]
-	at org.hibernate.mapping.Property.isValid(Property.java:239) ~[hibernate-core-4.2.3.Final.jar:4.2.3.Final]
-	at org.hibernate.mapping.PersistentClass.validate(PersistentClass.java:469) ~[hibernate-core-4.2.3.Final.jar:4.2.3.Final]
-	at org.hibernate.mapping.RootClass.validate(RootClass.java:270) ~[hibernate-core-4.2.3.Final.jar:4.2.3.Final]
-	at org.hibernate.cfg.Configuration.validate(Configuration.java:1303) ~[hibernate-core-4.2.3.Final.jar:4.2.3.Final]
-	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1761) ~[hibernate-core-4.2.3.Final.jar:4.2.3.Final]
-	at org.hibernate.ejb.EntityManagerFactoryImpl.<init>(EntityManagerFactoryImpl.java:96) ~[hibernate-entitymanager-4.2.3.Final.jar:4.2.3.Final]
-	at org.hibernate.ejb.Ejb3Configuration.buildEntityManagerFactory(Ejb3Configuration.java:914) ~[hibernate-entitymanager-4.2.3.Final.jar:4.2.3.Final]
-	... 28 common frames omitted
+2014-06-19 14:25:40,632 - [INFO] - from play in play-internal-execution-context-3 
+Application started (Dev)
+
+2014-06-19 14:26:11,320 - [INFO] - from play in play-internal-execution-context-3 
+datasource [jdbc:h2:mem:play] bound to JNDI as DefaultDS
+
+2014-06-19 14:26:11,326 - [INFO] - from play in play-internal-execution-context-3 
+database [default] connected at jdbc:h2:mem:play
+
+2014-06-19 14:26:11,673 - [INFO] - from play in play-internal-execution-context-3 
+Application started (Dev)
+
+2014-06-19 14:27:13,310 - [INFO] - from play in play-internal-execution-context-6 
+datasource [jdbc:h2:mem:play] bound to JNDI as DefaultDS
+
+2014-06-19 14:27:13,315 - [INFO] - from play in play-internal-execution-context-6 
+database [default] connected at jdbc:h2:mem:play
+
+2014-06-19 14:27:13,615 - [INFO] - from play in play-internal-execution-context-6 
+Application started (Dev)
+
+2014-06-19 14:28:50,693 - [INFO] - from play in play-internal-execution-context-6 
+datasource [jdbc:h2:mem:play] bound to JNDI as DefaultDS
+
+2014-06-19 14:28:50,698 - [INFO] - from play in play-internal-execution-context-6 
+database [default] connected at jdbc:h2:mem:play
+
+2014-06-19 14:28:51,001 - [INFO] - from play in play-internal-execution-context-6 
+Application started (Dev)
+
+2014-06-19 14:29:22,596 - [INFO] - from play in play-internal-execution-context-6 
+datasource [jdbc:h2:mem:play] bound to JNDI as DefaultDS
+
+2014-06-19 14:29:22,601 - [INFO] - from play in play-internal-execution-context-6 
+database [default] connected at jdbc:h2:mem:play
+
+2014-06-19 14:29:22,895 - [INFO] - from play in play-internal-execution-context-6 
+Application started (Dev)
+
+2014-06-19 14:29:58,177 - [INFO] - from play in play-internal-execution-context-6 
+datasource [jdbc:h2:mem:play] bound to JNDI as DefaultDS
+
+2014-06-19 14:29:58,180 - [INFO] - from play in play-internal-execution-context-6 
+database [default] connected at jdbc:h2:mem:play
+
+2014-06-19 14:29:58,438 - [INFO] - from play in play-internal-execution-context-6 
+Application started (Dev)
+
+2014-06-19 14:40:29,286 - [INFO] - from play in play-internal-execution-context-6 
+datasource [jdbc:h2:mem:play] bound to JNDI as DefaultDS
+
+2014-06-19 14:40:29,290 - [INFO] - from play in play-internal-execution-context-6 
+database [default] connected at jdbc:h2:mem:play
+
+2014-06-19 14:40:29,559 - [INFO] - from play in play-internal-execution-context-6 
+Application started (Dev)
+
+2014-06-19 14:44:30,874 - [INFO] - from play in play-internal-execution-context-6 
+datasource [jdbc:h2:mem:play] bound to JNDI as DefaultDS
+
+2014-06-19 14:44:30,878 - [INFO] - from play in play-internal-execution-context-6 
+database [default] connected at jdbc:h2:mem:play
+
+2014-06-19 14:44:31,093 - [INFO] - from play in play-internal-execution-context-6 
+Application started (Dev)
+
+2014-06-19 14:46:05,432 - [INFO] - from play in play-internal-execution-context-6 
+datasource [jdbc:h2:mem:play] bound to JNDI as DefaultDS
+
+2014-06-19 14:46:05,436 - [INFO] - from play in play-internal-execution-context-6 
+database [default] connected at jdbc:h2:mem:play
+
+2014-06-19 14:46:05,765 - [INFO] - from play in play-internal-execution-context-6 
+Application started (Dev)
+
+2014-06-19 14:49:49,218 - [INFO] - from play in play-internal-execution-context-6 
+datasource [jdbc:h2:mem:play] bound to JNDI as DefaultDS
+
+2014-06-19 14:49:49,223 - [INFO] - from play in play-internal-execution-context-6 
+database [default] connected at jdbc:h2:mem:play
+
+2014-06-19 14:49:49,580 - [INFO] - from play in play-internal-execution-context-6 
+Application started (Dev)
+
+2014-06-19 14:51:25,724 - [INFO] - from play in play-internal-execution-context-6 
+datasource [jdbc:h2:mem:play] bound to JNDI as DefaultDS
+
+2014-06-19 14:51:25,728 - [INFO] - from play in play-internal-execution-context-6 
+database [default] connected at jdbc:h2:mem:play
+
+2014-06-19 14:51:25,944 - [INFO] - from play in play-internal-execution-context-6 
+Application started (Dev)
+
+2014-06-19 14:51:42,406 - [INFO] - from play in play-internal-execution-context-6 
+datasource [jdbc:h2:mem:play] bound to JNDI as DefaultDS
+
+2014-06-19 14:51:42,413 - [INFO] - from play in play-internal-execution-context-6 
+database [default] connected at jdbc:h2:mem:play
+
+2014-06-19 14:51:42,706 - [INFO] - from play in play-internal-execution-context-6 
+Application started (Dev)
+
+2014-06-19 14:53:49,757 - [INFO] - from play in play-internal-execution-context-6 
+datasource [jdbc:h2:mem:play] bound to JNDI as DefaultDS
+
+2014-06-19 14:53:49,766 - [INFO] - from play in play-internal-execution-context-6 
+database [default] connected at jdbc:h2:mem:play
+
+2014-06-19 14:53:50,040 - [INFO] - from play in play-internal-execution-context-6 
+Application started (Dev)
+
+2014-06-19 14:54:28,978 - [INFO] - from play in play-internal-execution-context-6 
+datasource [jdbc:h2:mem:play] bound to JNDI as DefaultDS
+
+2014-06-19 14:54:28,982 - [INFO] - from play in play-internal-execution-context-6 
+database [default] connected at jdbc:h2:mem:play
+
+2014-06-19 14:54:29,193 - [INFO] - from play in play-internal-execution-context-6 
+Application started (Dev)
+
+2014-06-19 14:55:47,018 - [INFO] - from play in play-internal-execution-context-6 
+datasource [jdbc:h2:mem:play] bound to JNDI as DefaultDS
+
+2014-06-19 14:55:47,022 - [INFO] - from play in play-internal-execution-context-6 
+database [default] connected at jdbc:h2:mem:play
+
+2014-06-19 14:55:47,260 - [INFO] - from play in play-internal-execution-context-6 
+Application started (Dev)
+
+2014-06-19 14:56:15,522 - [INFO] - from play in play-internal-execution-context-6 
+datasource [jdbc:h2:mem:play] bound to JNDI as DefaultDS
+
+2014-06-19 14:56:15,527 - [INFO] - from play in play-internal-execution-context-6 
+database [default] connected at jdbc:h2:mem:play
+
+2014-06-19 14:56:15,747 - [INFO] - from play in play-internal-execution-context-6 
+Application started (Dev)
+
+2014-06-19 14:56:34,963 - [INFO] - from play in play-internal-execution-context-6 
+datasource [jdbc:h2:mem:play] bound to JNDI as DefaultDS
+
+2014-06-19 14:56:34,970 - [INFO] - from play in play-internal-execution-context-6 
+database [default] connected at jdbc:h2:mem:play
+
+2014-06-19 14:56:35,204 - [INFO] - from play in play-internal-execution-context-6 
+Application started (Dev)
+
+2014-06-19 14:57:01,054 - [INFO] - from play in play-internal-execution-context-6 
+datasource [jdbc:h2:mem:play] bound to JNDI as DefaultDS
+
+2014-06-19 14:57:01,061 - [INFO] - from play in play-internal-execution-context-6 
+database [default] connected at jdbc:h2:mem:play
+
+2014-06-19 14:57:01,302 - [INFO] - from play in play-internal-execution-context-6 
+Application started (Dev)
+
+2014-06-19 14:58:22,261 - [INFO] - from play in play-internal-execution-context-6 
+datasource [jdbc:h2:mem:play] bound to JNDI as DefaultDS
+
+2014-06-19 14:58:22,266 - [INFO] - from play in play-internal-execution-context-6 
+database [default] connected at jdbc:h2:mem:play
+
+2014-06-19 14:58:22,507 - [INFO] - from play in play-internal-execution-context-6 
+Application started (Dev)
 

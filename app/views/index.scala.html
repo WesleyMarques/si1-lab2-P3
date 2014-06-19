@@ -1,12 +1,29 @@
-@(hackFest: List[EventHack], metaForm: Form[EventHack]) 
+@(hackFest: List[EventHack], metaForm: Form[EventHack])
 
 @main("Hackfest") {
 <div class="jumbotron">
 	<div class="container">
 		<h1>Hack</h1>
+		<p>Descrição geral</p>
+		<button class="btn btn-success">Criar Evento</button>
 	</div>
 </div>
-<div class="continer">
+<div class="container">
+	<div class="row">
+		<div class="col-md-4">
+			<div class="alert alert-info">
+				<h4>Título</h4>
+				<p>n participantes - <b>DD/MM/AAAA</b></p>
+			</div>
+			<p>conteudo</p>
+			<button class="btn btn-info">Mais informações</button>
+			<button class="btn btn-success">Cadastrar-se</button>
+		</div>
+		<div class="col-md-4">teste</div>
+		<div class="col-md-4">teste</div>
+		<div class="col-md-4">test</div>
+
+	</div>
 
 </div>
 
