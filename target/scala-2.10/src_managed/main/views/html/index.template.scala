@@ -32,8 +32,9 @@ Seq[Any](format.raw/*1.79*/("""
 <meta charset="utf-8">
 <div class="jumbotron">
 	<div class="container">
-		<h1>Hack</h1>
-		<p>Descrição geral</p>
+		<h1>Hackfest of programming</h1>
+		<p>É uma área destinada a todos os amantes do mundo da programação, onde você encontrará<br>
+		   uma vasta lista de eventos de grande relevância na área de computação. NÃO PERCA!</p>
 		<div class="panel-group" id="accordion">
 			<div class="panel panel-default">
 				<div class="panel-heading">
@@ -45,21 +46,21 @@ Seq[Any](format.raw/*1.79*/("""
 						<div class="panel-body">
 							<div class="row">
 								<div class="col-md-6">
-								"""),_display_(Seq[Any](/*20.10*/form(routes.Application.newEvent())/*20.45*/ {_display_(Seq[Any](format.raw/*20.47*/("""
-							"""),_display_(Seq[Any](/*21.9*/inputText(eventForm("titleHack"), 
+								"""),_display_(Seq[Any](/*21.10*/form(routes.Application.newEvent())/*21.45*/ {_display_(Seq[Any](format.raw/*21.47*/("""
+							"""),_display_(Seq[Any](/*22.9*/inputText(eventForm("titleHack"), 
 								'_label -> "Nome", 
 								'_help -> "Obrigatório",
 								'class -> "form-control", 
-								'required -> "required" ))),format.raw/*25.34*/(""" 
-							"""),_display_(Seq[Any](/*26.9*/inputText(eventForm("description"), 
+								'required -> "required" ))),format.raw/*26.34*/(""" 
+							"""),_display_(Seq[Any](/*27.9*/inputText(eventForm("description"), 
 								'_label -> "Descrição", 
-								'class ->"form-control" ))),format.raw/*28.34*/(""" 
-							"""),_display_(Seq[Any](/*29.9*/inputText(eventForm("date"), 
+								'class ->"form-control" ))),format.raw/*29.34*/(""" 
+							"""),_display_(Seq[Any](/*30.9*/inputText(eventForm("date"), 
 								'_label -> "Data",
 								'_help -> "yyyy-mm-dd", 
 								'class -> "form-control", 
 								'pattern ->"[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]", 
-								'required -> "required" ))),format.raw/*34.34*/("""
+								'required -> "required" ))),format.raw/*35.34*/("""
 									<a data-toggle="collapse" data-parent="#accordion"
 										href="#collapseOne" class="btn btn-success">Fechar</a>
 									<button type="submit" class="btn btn-primary">Criar</button>
@@ -67,18 +68,18 @@ Seq[Any](format.raw/*1.79*/("""
 								</div>
 								<div class="col-md-6">
 									<h4>Temas:</h4>
-									<input type="checkbox" name="temas[]"
+									<input type="checkbox" name="associated[]"
 										value="Engenharia de Software">Engenharia de Software<br>
-									<input type="checkbox" name="temas[]"
+									<input type="checkbox" name="associated[]"
 										value="Inteligência Artificial">Inteligência
-									Artificial<br> <input type="checkbox" name="temas[]"
+									Artificial<br> <input type="checkbox" name="associated[]"
 										value="Grafos">Grafos<br> <input type="checkbox"
-										name="temas[]" value="Algoritmos">Algoritmos<br>
-									<input type="checkbox" name="temas[]" value="Música">Música<br>
-									<input type="checkbox" name="temas[]" value="Criptografia">Criptografia<br>
+										name="associated[]" value="Algoritmos">Algoritmos<br>
+									<input type="checkbox" name="associated[]" value="Música">Música<br>
+									<input type="checkbox" name="associated[]" value="Criptografia">Criptografia<br>
 								</div>
 							</div>
-							""")))})),format.raw/*53.9*/("""
+							""")))})),format.raw/*54.9*/("""
 						</div>
 					</div>
 				</div>
@@ -88,58 +89,62 @@ Seq[Any](format.raw/*1.79*/("""
 </div>
 <div class="container">
 	<div class="row">
-		"""),_display_(Seq[Any](/*63.4*/if(hackFest.size() == 0)/*63.28*/{_display_(Seq[Any](format.raw/*63.29*/("""
+		"""),_display_(Seq[Any](/*64.4*/if(hackFest.size() == 0)/*64.28*/{_display_(Seq[Any](format.raw/*64.29*/("""
 		<div class="col-md-12">
 			<div class="alert alert-success">
 				<h2>Não há nenhum evento registrado</h2>
 			</div>
 		</div>
 
-		""")))}/*70.4*/else/*70.8*/{_display_(Seq[Any](format.raw/*70.9*/(""" 
-		"""),_display_(Seq[Any](/*71.4*/for(listHack <- hackFest) yield /*71.29*/{_display_(Seq[Any](format.raw/*71.30*/("""
+		""")))}/*71.4*/else/*71.8*/{_display_(Seq[Any](format.raw/*71.9*/(""" 
+		"""),_display_(Seq[Any](/*72.4*/for(listHack <- hackFest) yield /*72.29*/{_display_(Seq[Any](format.raw/*72.30*/("""
+		"""),_display_(Seq[Any](/*73.4*/moreInfo(listHack))),format.raw/*73.22*/("""
 		<div class="col-md-4">
 			<div class="alert alert-info">
-				<h4>"""),_display_(Seq[Any](/*74.10*/listHack/*74.18*/.getTitleHack())),format.raw/*74.33*/("""</h4>
+				<h4>"""),_display_(Seq[Any](/*76.10*/listHack/*76.18*/.getTitleHack())),format.raw/*76.33*/("""</h4>
 				<p>
-					"""),_display_(Seq[Any](/*76.7*/listHack/*76.15*/.getParticipantes().size())),format.raw/*76.41*/(""" participantes - <b>"""),_display_(Seq[Any](/*76.62*/listHack/*76.70*/.getDate())),format.raw/*76.80*/("""</b>
+					"""),_display_(Seq[Any](/*78.7*/listHack/*78.15*/.getParticipantes().size())),format.raw/*78.41*/(""" participantes - <b>"""),_display_(Seq[Any](/*78.62*/listHack/*78.70*/.getDate())),format.raw/*78.80*/("""</b>
 				</p>
 			</div>
-			<p>"""),_display_(Seq[Any](/*79.8*/listHack/*79.16*/.getDescription())),format.raw/*79.33*/("""</p>
+			<div style="height:125px;"><p>"""),_display_(Seq[Any](/*81.35*/listHack/*81.43*/.getDescription())),format.raw/*81.60*/("""</p></div>
 			<p>
-				Assunto relacionados:"""),_display_(Seq[Any](/*81.27*/for(assuntos <- listHack.getAssociated()) yield /*81.68*/{_display_(Seq[Any](format.raw/*81.69*/(""" <a href="#">"""),_display_(Seq[Any](/*81.83*/assuntos)),format.raw/*81.91*/(""" </a> """)))})),format.raw/*81.98*/(""" 
+				Assunto relacionados:
+				"""),_display_(Seq[Any](/*84.6*/for(assuntos <- listHack.getAssociated()) yield /*84.47*/{_display_(Seq[Any](format.raw/*84.48*/(""" 
+				<a href="#">"""),_display_(Seq[Any](/*85.18*/assuntos)),format.raw/*85.26*/(""" </a> 
+				""")))})),format.raw/*86.6*/(""" 
 				<br>
 			<div class="panel-group" id="accordion">
 				<div class="panel panel-default">
 					<div class="panel-heading">
 						<h4 class="panel-title">
-						<button class="btn btn-info">Mais informações</button>
+						<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#info_"""),_display_(Seq[Any](/*92.93*/listHack/*92.101*/.getId())),format.raw/*92.109*/("""">Mais informações</button>
 							<a data-toggle="collapse" data-parent="#accordion"
-								href="#collapseTwo" class="btn btn-success">Cadastrar-se</a>
+								href="#collapse"""),_display_(Seq[Any](/*94.25*/listHack/*94.33*/.getId())),format.raw/*94.41*/("""" class="btn btn-success">Cadastrar-se</a>
 						</h4>
-						<div id="collapseTwo" class="panel-collapse collapse">
+						<div id="collapse"""),_display_(Seq[Any](/*96.25*/listHack/*96.33*/.getId())),format.raw/*96.41*/("""" class="panel-collapse collapse">
 							<div class="panel-body">
-							"""),_display_(Seq[Any](/*93.9*/form(routes.Application.addUser(listHack.getId()))/*93.59*/ {_display_(Seq[Any](format.raw/*93.61*/("""
-							"""),_display_(Seq[Any](/*94.9*/inputText(userForm("name"), 
+							"""),_display_(Seq[Any](/*98.9*/form(routes.Application.addUser(listHack.getId()))/*98.59*/ {_display_(Seq[Any](format.raw/*98.61*/("""
+							"""),_display_(Seq[Any](/*99.9*/inputText(userForm("name"), 
 								'_label -> "Nome", 
 								'_help -> "Obrigatório",
 								'class -> "form-control", 
-								'required -> "required" ))),format.raw/*98.34*/(""" 
-							"""),_display_(Seq[Any](/*99.9*/inputText(userForm("email"), 
+								'required -> "required" ))),format.raw/*103.34*/(""" 
+							"""),_display_(Seq[Any](/*104.9*/inputText(userForm("email"), 
 								'_label -> "Email", 
-								'class ->"form-control" ))),format.raw/*101.34*/("""
+								'class ->"form-control" ))),format.raw/*106.34*/("""
 									<button type="submit" class="btn btn-primary">Criar</button>
 									
-									""")))})),format.raw/*104.11*/("""						
+									""")))})),format.raw/*109.11*/("""						
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-		""")))}))))})),format.raw/*111.5*/("""
+		""")))}))))})),format.raw/*116.5*/("""
 		</div>
 		</div>
-""")))})),format.raw/*114.2*/("""
+""")))})),format.raw/*119.2*/("""
 """))}
     }
     
@@ -152,11 +157,11 @@ Seq[Any](format.raw/*1.79*/("""
 }
                 /*
                     -- GENERATED --
-                    DATE: Thu Jun 19 17:23:07 BRT 2014
+                    DATE: Fri Jun 20 09:31:08 BRT 2014
                     SOURCE: C:/Users/Wesley/Dropbox/workspaces/workspaceJEE/si1-lab2-P3/app/views/index.scala.html
-                    HASH: cf4184d6904f2ce24329cdcb7e4700a10dfa3dee
-                    MATRIX: 810->1|998->78|1035->99|1059->115|1097->116|1681->664|1725->699|1765->701|1809->710|1995->874|2040->884|2165->987|2210->997|2456->1221|3347->2081|3499->2198|3532->2222|3571->2223|3721->2355|3733->2359|3771->2360|3811->2365|3852->2390|3891->2391|3996->2460|4013->2468|4050->2483|4105->2503|4122->2511|4170->2537|4227->2558|4244->2566|4276->2576|4342->2607|4359->2615|4398->2632|4472->2670|4529->2711|4568->2712|4618->2726|4648->2734|4687->2741|5180->3199|5239->3249|5279->3251|5323->3260|5503->3418|5548->3428|5663->3520|5787->3611|5903->3691|5955->3711
-                    LINES: 26->1|30->1|31->3|31->3|31->3|48->20|48->20|48->20|49->21|53->25|54->26|56->28|57->29|62->34|81->53|91->63|91->63|91->63|98->70|98->70|98->70|99->71|99->71|99->71|102->74|102->74|102->74|104->76|104->76|104->76|104->76|104->76|104->76|107->79|107->79|107->79|109->81|109->81|109->81|109->81|109->81|109->81|121->93|121->93|121->93|122->94|126->98|127->99|129->101|132->104|139->111|142->114
+                    HASH: 37b29a2eff8e435acccfed81d005e7bc632063ef
+                    MATRIX: 810->1|998->78|1035->99|1059->115|1097->116|1861->844|1905->879|1945->881|1989->890|2175->1054|2220->1064|2345->1167|2390->1177|2636->1401|3557->2291|3709->2408|3742->2432|3781->2433|3931->2565|3943->2569|3981->2570|4021->2575|4062->2600|4101->2601|4140->2605|4180->2623|4285->2692|4302->2700|4339->2715|4394->2735|4411->2743|4459->2769|4516->2790|4533->2798|4565->2808|4659->2866|4676->2874|4715->2891|4799->2940|4856->2981|4895->2982|4950->3001|4980->3009|5023->3021|5308->3270|5326->3278|5357->3286|5503->3396|5520->3404|5550->3412|5665->3491|5682->3499|5712->3507|5822->3582|5881->3632|5921->3634|5965->3643|6146->3801|6192->3811|6307->3903|6431->3994|6547->4074|6599->4094
+                    LINES: 26->1|30->1|31->3|31->3|31->3|49->21|49->21|49->21|50->22|54->26|55->27|57->29|58->30|63->35|82->54|92->64|92->64|92->64|99->71|99->71|99->71|100->72|100->72|100->72|101->73|101->73|104->76|104->76|104->76|106->78|106->78|106->78|106->78|106->78|106->78|109->81|109->81|109->81|112->84|112->84|112->84|113->85|113->85|114->86|120->92|120->92|120->92|122->94|122->94|122->94|124->96|124->96|124->96|126->98|126->98|126->98|127->99|131->103|132->104|134->106|137->109|144->116|147->119
                     -- GENERATED --
                 */
             

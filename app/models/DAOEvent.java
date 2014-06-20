@@ -10,7 +10,7 @@ import play.db.jpa.JPA;
 public class DAOEvent {
 	
 	public void persist(EventHack event){
-		JPA.em().persist(event);		
+		JPA.em().persist(event);
 	}
 	
 	public void flush(){
@@ -25,11 +25,6 @@ public class DAOEvent {
 		String hql = "FROM EventHack ORDER BY id";
 		Query hqlQuery = JPA.em().createQuery(hql);
 		return hqlQuery.getResultList();
-	}
-	
-	public void update(Long id){
-		EventHack eventUp = this.findByEntityId(id);
-		JPA.em().merge(eventUp);		
 	}
 	
 	public Query createQuery(String query){

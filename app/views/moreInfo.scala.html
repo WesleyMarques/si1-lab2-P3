@@ -1,0 +1,32 @@
+@(hackFest: EventHack)
+<meta charset="utf-8">
+<div class="modal fade" id="info_@hackFest.getId()" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">@hackFest.getTitleHack()</h4>
+      </div>
+      <div class="modal-body">
+        <p>
+	  		@hackFest.getDate()
+        </p>
+        @hackFest.getDescription()
+        <br><br>
+	    <p><b>Temas:</b>
+	    @for(tema <- hackFest.getAssociated()) {
+	    	<a href="#">@tema </a> 
+	    }
+	    <p>
+      </div>
+      <div class="modal-footer" style="text-align: left;">
+      <h4>Confirmaram presença: </h4><br>
+      <ul>
+        @for(nome <- hackFest.getParticipantes()) {
+        	<p><b><li>@nome.getName</li></b></p>
+        }
+       </ul>
+      </div>
+    </div>
+  </div>
+</div>

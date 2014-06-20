@@ -15,7 +15,7 @@ import play.data.validation.Constraints.Required;
 public class User {
 	
 	@Id
-	@SequenceGenerator(name = "User_SEQUENCE", sequenceName = "User_SEQUENCE", allocationSize = 1, initialValue = 0)
+	@SequenceGenerator(name = "USER_SEQUENCE", sequenceName = "USER_SEQUENCE", allocationSize = 1, initialValue = 0)
 	@GeneratedValue(strategy = GenerationType.TABLE)
 	private long id;
 
